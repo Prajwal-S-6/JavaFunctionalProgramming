@@ -1,0 +1,4 @@
+Some text
+TThis is text file
+some content
+other content
