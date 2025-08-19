@@ -29,6 +29,12 @@ public class Main {
         System.out.println("------------------------------------------------------------------");
         System.out.println(integerList.stream().filter(isEven).count());
 
+        System.out.println("------------------------------------------------------------------");
+        Predicate<Integer> isAllPositive = (val) -> val >= 0;
+        System.out.println(integerList.stream().allMatch(isAllPositive));
+
+
+
 
     }
 
