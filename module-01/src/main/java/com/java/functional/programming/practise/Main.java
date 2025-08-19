@@ -48,6 +48,15 @@ public class Main {
         List<String> l3 = Stream.concat(l1.stream(), l2.stream()).toList();
         System.out.println(l3);
 
+        System.out.println("------------------------------------------------------------------");
+        String test = "abracadabra";
+        System.out.println(test.chars().mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(val -> val, Collectors.counting()))
+                .entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey).findFirst());
+        System.out.println(Arrays.stream(test.split(""))
+                .collect(groupingBy(val -> val, counting()))
+                .entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey).findFirst());
+
 
     }
 
