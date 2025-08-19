@@ -37,6 +37,9 @@ public class Main {
         System.out.println(integerList.stream().filter(val -> val > 5).findFirst());
 
 
+        System.out.println("------------------------------------------------------------------");
+        System.out.println(integerList.stream().collect(groupingBy( Function.identity(), mapping(val -> val * 2, toList()))));
+        System.out.println(integerList.stream().collect(groupingBy( val -> val % 2, Collectors.toMap(Integer::valueOf, (val) -> val * 2))));
 
 
 
