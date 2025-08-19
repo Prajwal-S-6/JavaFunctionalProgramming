@@ -21,6 +21,10 @@ public class Main {
         UnaryOperator<Integer> square = (val) -> val * val;
         integerList.stream().map(square).forEach(System.out::println);
 
+        System.out.println("------------------------------------------------------------------");
+        BinaryOperator<Integer> sumOfNums = (a,b) -> a + b;
+        System.out.println(integerList.stream().reduce(0, sumOfNums));
+        System.out.println(integerList.stream().reduce(0, Integer::sum));
 
     }
 
