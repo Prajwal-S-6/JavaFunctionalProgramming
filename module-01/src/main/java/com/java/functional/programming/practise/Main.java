@@ -57,6 +57,19 @@ public class Main {
                 .collect(groupingBy(val -> val, counting()))
                 .entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey).findFirst());
 
+        System.out.println("------------------------------------------------------------------");
+        Map<String, Integer> unsortedMap = new HashMap<>();
+        unsortedMap.put("banana", 2);
+        unsortedMap.put("apple", 5);
+        unsortedMap.put("cherry", 1);
+
+        Map <String, Integer> sortedMap = unsortedMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+        System.out.println(sortedMap);
+
+
+
 
     }
 
