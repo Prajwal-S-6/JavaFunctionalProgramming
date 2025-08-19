@@ -69,6 +69,11 @@ public class Main {
         System.out.println(sortedMap);
 
 
+        System.out.println("------------------------------------------------------------------");
+        List<String> words = List.of("apple", "banana", "cherry", "date", "eggplant", "fig");
+
+        System.out.println(words.stream().collect(Collectors.groupingBy(val -> val.charAt(0))));
+
 
 
     }
