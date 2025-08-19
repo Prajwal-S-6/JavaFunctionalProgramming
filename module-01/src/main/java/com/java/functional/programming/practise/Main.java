@@ -42,6 +42,12 @@ public class Main {
         System.out.println(integerList.stream().collect(groupingBy( val -> val % 2, Collectors.toMap(Integer::valueOf, (val) -> val * 2))));
 
 
+        System.out.println("------------------------------------------------------------------");
+        List<String> l1 = Arrays.asList("a", "b", "c");
+        List<String> l2 = Arrays.asList("d", "e","f");
+        List<String> l3 = Stream.concat(l1.stream(), l2.stream()).toList();
+        System.out.println(l3);
+
 
     }
 
