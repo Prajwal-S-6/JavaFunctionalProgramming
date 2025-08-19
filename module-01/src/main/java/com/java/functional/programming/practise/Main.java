@@ -93,7 +93,25 @@ public class Main {
                 .toList()
         );
 
+        System.out.println("------------------------------------------------------------------");
+        List<String> strings = Arrays.asList("racecar", "hello", "level", "world", "deified");
 
+        strings.stream().filter(Main::isPalindrome).forEach(System.out::println);
+        System.out.println(strings.stream().filter(Main::isPalindrome).count());
+
+
+    }
+
+    private static boolean isPalindrome(String string) {
+        int low = 0;
+        int high = string.length() - 1;
+
+        while (low <= high) {
+            if(string.charAt(low) != string.charAt(high)) return false;
+            low++;
+            high--;
+        }
+        return true;
     }
 
 
