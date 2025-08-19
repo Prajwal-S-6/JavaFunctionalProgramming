@@ -75,6 +75,24 @@ public class Main {
         System.out.println(words.stream().collect(Collectors.groupingBy(val -> val.charAt(0))));
 
 
+        System.out.println("------------------------------------------------------------------");
+        String paragraph = "Java cracking Java Java interviews by learning Java Spring Spring Boot";
+
+        System.out.println(Arrays.stream(paragraph.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().sorted(
+                        new Comparator<Map.Entry<String, Long>>() {
+                            @Override
+                            public int compare(Map.Entry<String, Long> o1, Map.Entry<String, Long> o2) {
+                                if(Objects.equals(o1.getValue(), o2.getValue())) return 0;
+                                else if(o1.getValue() < o2.getValue()) return 1;
+                                else return -1;
+                            }
+                        }
+                )
+                .limit(2)
+                .toList()
+        );
+
 
     }
 
