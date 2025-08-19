@@ -33,6 +33,10 @@ public class Main {
         Predicate<Integer> isAllPositive = (val) -> val >= 0;
         System.out.println(integerList.stream().allMatch(isAllPositive));
 
+        System.out.println("------------------------------------------------------------------");
+        System.out.println(integerList.stream().filter(val -> val > 5).findFirst());
+
+
 
 
 
