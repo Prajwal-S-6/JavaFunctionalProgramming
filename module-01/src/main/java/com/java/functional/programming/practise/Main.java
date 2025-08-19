@@ -17,6 +17,11 @@ public class Main {
         Predicate<Integer> isEven = (val) -> val % 2 == 0;
         integerList.stream().filter(isEven).forEach(System.out::println);
 
+        System.out.println("------------------------------------------------------------------");
+        UnaryOperator<Integer> square = (val) -> val * val;
+        integerList.stream().map(square).forEach(System.out::println);
+
+
     }
 
 
