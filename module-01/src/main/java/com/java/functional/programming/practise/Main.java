@@ -26,6 +26,10 @@ public class Main {
         System.out.println(integerList.stream().reduce(0, sumOfNums));
         System.out.println(integerList.stream().reduce(0, Integer::sum));
 
+        System.out.println("------------------------------------------------------------------");
+        System.out.println(integerList.stream().filter(isEven).count());
+
+
     }
 
 
